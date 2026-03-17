@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find C:UsersnissiDownloadssite -type f -name *)",
+      "WebFetch(domain:www.youtube.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(mkdir -p \"C:/Users/nissi/Downloads/site/.claude/skills\")",
+      "Bash(cp -r /tmp/ui-ux-pro-max-skill/.claude/skills/* \"C:/Users/nissi/Downloads/site/.claude/skills/\")",
+      "Bash(python skills/ui-ux-pro-max/scripts/search.py \"think tank portfolio showcase\" --design-system -p \"ThinkSphere\")",
+      "Bash(python skills/ui-ux-pro-max/scripts/search.py \"glassmorphism 3D portfolio showcase\" --design-system -p \"ThinkSphere\")",
+      "Bash(python skills/ui-ux-pro-max/scripts/search.py \"glassmorphism\" --domain style)",
+      "Bash(npm list:*)",
+      "Bash(npx --yes live-server --version)",
+      "Bash(npm install:*)",
+      "mcp__Claude_Preview__preview_start",
+      "WebFetch(domain:21st.dev)",
+      "Bash(mkdir -p _backup)",
+      "Bash(cp index.html styles.css script.js _backup/)",
+      "Read(//c/Users/nissi/Downloads/**)",
+      "Bash(npx create-next-app@latest thinksphere-next --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --turbopack --yes)",
+      "Bash(cp -r thinksphere-next/* \"C:\\\\Users\\\\nissi\\\\Downloads\\\\site/\")",
+      "Bash(cp thinksphere-next/.eslintrc* thinksphere-next/eslint.config.mjs \"C:\\\\Users\\\\nissi\\\\Downloads\\\\site/\")",
+      "Bash(cp thinksphere-next/next-env.d.ts thinksphere-next/tsconfig.json thinksphere-next/postcss.config.mjs \"C:\\\\Users\\\\nissi\\\\Downloads\\\\site/\")",
+      "Bash(cp thinksphere-next/package.json thinksphere-next/package-lock.json thinksphere-next/tsconfig.json thinksphere-next/postcss.config.mjs thinksphere-next/next.config.ts thinksphere-next/next-env.d.ts \"C:\\\\Users\\\\nissi\\\\Downloads\\\\site/\")",
+      "Bash(cp -r thinksphere-next/src \"C:\\\\Users\\\\nissi\\\\Downloads\\\\site/\")",
+      "Bash(cp -r thinksphere-next/public \"C:\\\\Users\\\\nissi\\\\Downloads\\\\site/\")",
+      "Bash(rm -rf \"C:\\\\Users\\\\nissi\\\\Downloads\\\\site/node_modules\")",
+      "Bash(mkdir -p public/images)",
+      "Bash(cp images/group-photo.jpeg public/images/)",
+      "Bash(npx shadcn@latest init --defaults --yes)"
+    ]
+  }
+}

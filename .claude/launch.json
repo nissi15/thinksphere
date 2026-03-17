@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["node_modules/live-server/live-server.js", "--port=8080", "--no-browser"],
+      "port": 8080
+    }
+  ]
+}
