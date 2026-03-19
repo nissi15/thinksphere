@@ -87,7 +87,7 @@ function VideoCard({
           )}
         >
           <iframe
-            src={`https://www.youtube.com/embed/${video.youtubeId}`}
+            srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:48px;width:68px;left:50%;transform:translateX(-50%);text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 12px rgba(0,0,0,.5)}</style><a href=https://www.youtube.com/embed/${video.youtubeId}?autoplay=1><img src=https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg alt='${video.title}'><span>&#x25BA;</span></a>`}
             className="w-full h-full border-0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

@@ -113,12 +113,6 @@ export function HeroSection() {
           >
             <h1 className="font-serif text-[clamp(2.2rem,5vw,3.5rem)] font-bold leading-[1.08] tracking-[-1.5px] text-black text-left">
               {displayed}
-              <span
-                className={cn(
-                  "inline-block w-[2px] h-[0.8em] bg-[#2A7D6E] ml-1 align-middle",
-                  done ? "animate-pulse" : "animate-pulse"
-                )}
-              />
             </h1>
           </motion.div>
 
