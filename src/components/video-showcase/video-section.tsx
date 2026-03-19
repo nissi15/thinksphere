@@ -1,48 +1,47 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Play, ExternalLink } from "lucide-react";
-import { useRef, useState } from "react";
+import { ExternalLink } from "lucide-react";
 
 const videos = [
   {
-    src: "/videos/video-1.mp4",
-    title: "Our Tourism Vision",
+    youtubeId: "dgu6Zl9TY24",
+    title: "Challenge 1: Introduction",
     subtitle: "The GCGO Goal",
     description:
-      "How ThinkSphere envisions transforming Kicukiro's tourism landscape into a youth employment engine — our Grand Challenges response.",
+      "How ThinkSphere envisions transforming Kicukiro\u2019s tourism landscape into a youth employment engine \u2014 our Grand Challenges response.",
     tag: "Vision",
   },
   {
-    src: "/videos/video-2.mp4",
-    title: "Community Voices",
-    subtitle: "The Kicukiro Gap",
+    youtubeId: "-Yv3ogpgAws",
+    title: "Challenge 2: Discover Africa",
+    subtitle: "Kicukiro\u2019s Story",
     description:
-      "Real stories from youth and women in Kicukiro seeking stable income through tourism — revealing the systemic barriers holding them back.",
+      "Real stories of Kicukiro and the story that the world needs to know.",
     tag: "Research",
   },
   {
-    src: "/videos/video-3.mp4",
-    title: "The Training Model",
-    subtitle: "Building Capacity",
+    youtubeId: "SEU1w4vOqWw",
+    title: "Challenge 3: Help-Lab",
+    subtitle: "Our Community Impact",
     description:
-      "Inside our bootcamp: hospitality, customer service, digital marketing, and business planning — equipping youth with credentials that work.",
+      "We helped the community by paying tuition for over 10 students in Kicukiro.",
     tag: "Training",
   },
   {
-    src: "/videos/video-4.mp4",
-    title: "Pitch & Compete",
-    subtitle: "The Solution",
+    youtubeId: "lEsdeRA88cc",
+    title: "Challenge 4: Hunt for Treasure",
+    subtitle: "Business in Kicukiro",
     description:
-      "Watch youth present tourism business ideas for seed funding and internship placements — the ThinkSphere x BDF competition in action.",
+      "We visited Envision Gallery and interviewed the CEO to discuss their impact on tourism and their platform for Kicukiro\u2019s artists.",
     tag: "Compete",
   },
   {
-    src: "/videos/video-5.mp4",
-    title: "The Credential Journey",
-    subtitle: "The Outcome",
+    youtubeId: "dgu6Zl9TY24",
+    title: "Challenge 5: Launch Your Mission",
+    subtitle: "Our Solution",
     description:
-      "From training to employment — every graduate leaves with proof they can do the job. The credential that gets you hired.",
+      "We discussed our solution towards the job creation problem in the community.",
     tag: "Outcome",
   },
 ];
@@ -54,22 +53,7 @@ function VideoCard({
   video: (typeof videos)[0];
   index: number;
 }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const handlePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-        setIsPlaying(false);
-      } else {
-        videoRef.current.play();
-        setIsPlaying(true);
-      }
-    }
-  };
-
-  const isLeft = index % 2 === 0; // Steps 01, 03, 05 on LEFT; 02, 04 on RIGHT
+  const isLeft = index % 2 === 0;
 
   return (
     <motion.div
@@ -83,50 +67,36 @@ function VideoCard({
       }}
       className="relative"
     >
-      {/* Timeline node — centered on the vertical line */}
+      {/* Timeline node */}
       <div
         className="hidden md:block absolute left-1/2 -translate-x-1/2 top-6 w-4 h-4 rounded-full bg-[#2A7D6E] border-[3px] border-white z-10"
         style={{ boxShadow: "0 0 12px rgba(42, 125, 110, 0.4)" }}
       />
 
-      {/* Z-Pattern Grid: 12-column layout */}
+      {/* Z-Pattern Grid */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center">
-        {/* Video block */}
+        {/* YouTube embed */}
         <motion.div
           whileHover={{ scale: 1.01 }}
           transition={{ duration: 0.3 }}
           className={cn(
-            "relative aspect-video rounded-2xl overflow-hidden glass-panel cursor-pointer",
+            "relative aspect-video rounded-2xl overflow-hidden glass-panel",
             isLeft
-              ? "md:col-span-5 md:col-start-1"   // LEFT cards: columns 1-5
-              : "md:col-span-5 md:col-start-8"    // RIGHT cards: columns 8-12
+              ? "md:col-span-5 md:col-start-1"
+              : "md:col-span-5 md:col-start-8"
           )}
-          onClick={handlePlay}
         >
-          <video
-            ref={videoRef}
-            src={video.src}
-            className="w-full h-full object-cover"
-            loop
-            muted
-            playsInline
-            preload="none"
-            onEnded={() => setIsPlaying(false)}
+          <iframe
+            src={`https://www.youtube.com/embed/${video.youtubeId}`}
+            className="w-full h-full border-0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            title={video.title}
+            loading="lazy"
           />
 
-          {/* Play overlay */}
-          <div
-            className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
-              isPlaying ? "opacity-0 hover:opacity-100" : "opacity-100"
-            } bg-black/5`}
-          >
-            <div className="w-14 h-14 rounded-full glass-panel flex items-center justify-center transition-transform duration-300 hover:scale-110">
-              <Play className="w-5 h-5 text-black ml-0.5" fill="black" />
-            </div>
-          </div>
-
           {/* Tag */}
-          <div className="absolute top-3 left-3">
+          <div className="absolute top-3 left-3 pointer-events-none">
             <span className="accent-font inline-block text-[10px] font-bold uppercase tracking-[3px] text-white px-3 py-1 rounded-full bg-black/60 border border-white/10">
               {video.tag}
             </span>
@@ -138,8 +108,8 @@ function VideoCard({
           className={cn(
             "md:py-4",
             isLeft
-              ? "md:col-span-5 md:col-start-7"    // Text on right side
-              : "md:col-span-5 md:col-start-1 md:row-start-1" // Text on left side (before video visually)
+              ? "md:col-span-5 md:col-start-7"
+              : "md:col-span-5 md:col-start-1 md:row-start-1"
           )}
         >
           <motion.div
@@ -180,7 +150,7 @@ export function VideoShowcase() {
   return (
     <section id="journey" className="py-24 md:py-32 px-6 md:px-12 bg-gradient-to-b from-white to-[#FAFAFA]">
       <div className="max-w-[1200px] mx-auto">
-        {/* Section header — left-aligned */}
+        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -195,22 +165,20 @@ export function VideoShowcase() {
             Tourism. Jobs. Impact.
           </h2>
           <p className="font-gotham text-slate-800 text-base leading-relaxed">
-            Five moments documenting ThinkSphere&apos;s path from identifying the tourism employment gap in Kicukiro to building a system that closes it.
+            Five challenges documenting ThinkSphere&apos;s path from identifying the tourism employment gap in Kicukiro to building a system that closes it.
           </p>
         </motion.div>
 
         {/* Timeline with Electric Cyan glowing center line */}
         <div className="relative">
-          {/* Vertical Electric Cyan glowing timeline */}
           <div
             className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-[#00E5FF]/40 z-0"
             style={{ boxShadow: "0 0 10px rgba(0, 229, 255, 0.3), 0 0 20px rgba(0, 229, 255, 0.15)" }}
           />
 
-          {/* Video cards */}
           <div className="flex flex-col gap-16 md:gap-24">
             {videos.map((video, i) => (
-              <VideoCard key={video.src} video={video} index={i} />
+              <VideoCard key={video.youtubeId + i} video={video} index={i} />
             ))}
           </div>
         </div>

@@ -4,8 +4,9 @@ import { motion } from "framer-motion";
 import { Play, ChevronDown, MapPin, TrendingUp, Users, Briefcase } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Counter } from "@/components/ui/counter";
+import { CardStack, CardStackItem } from "@/components/ui/card-stack";
 import { cn } from "@/lib/utils";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -39,35 +40,19 @@ const stats = [
   { target: 20.5, decimals: 1, suffix: "%", label: "Youth Unemployment", prefix: "", icon: Users },
 ];
 
-function LazySpline() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [show, setShow] = useState(false);
 
-  useEffect(() => {
-    if (!ref.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setShow(true); obs.disconnect(); } },
-      { rootMargin: "200px" }
-    );
-    obs.observe(ref.current);
-    return () => obs.disconnect();
-  }, []);
-
-  return (
-    <div ref={ref} className="w-full h-full">
-      {show && (
-        <iframe
-          src="https://my.spline.design/untitled-rv0hx3zVdoM6t2ydngxuS7zi/"
-          className="w-full h-full border-0"
-          frameBorder="0"
-          allowFullScreen
-          title="ThinkSphere 3D Scene"
-          loading="lazy"
-        />
-      )}
-    </div>
-  );
-}
+const heroVideos: CardStackItem[] = [
+  { id: 1, title: "Community Children", description: "Youth of Kicukiro", videoSrc: "/videos/children.MOV", tag: "Community" },
+  { id: 2, title: "The School", description: "Kicukiro school building", imageSrc: "/images/school-building.jpeg", tag: "Education" },
+  { id: 3, title: "At the Gallery", description: "Envision Gallery visit", videoSrc: "/videos/at-gallery.MOV", tag: "Tourism" },
+  { id: 4, title: "Field Visit", description: "Team on the ground in Kicukiro", imageSrc: "/images/team-selfie.jpeg", tag: "Fieldwork" },
+  { id: 5, title: "CEO Interview", description: "Envision CEO on tourism impact", videoSrc: "/videos/ceo-envision.MOV", tag: "Business" },
+  { id: 6, title: "The Team", description: "ThinkSphere team at Envision Gallery", imageSrc: "/images/team-group.jpeg", tag: "Team" },
+  { id: 7, title: "Paying Fees", description: "Tuition for 10+ students", videoSrc: "/videos/paying-fees.mp4", tag: "Impact" },
+  { id: 8, title: "Community Voices", description: "Stories from Kicukiro", videoSrc: "/videos/3-people.mp4", tag: "Voices" },
+  { id: 9, title: "The Beginning", description: "Where it all started", videoSrc: "/videos/at-the-start.mp4", tag: "Origins" },
+  { id: 10, title: "Our Journey", description: "ThinkSphere origins", videoSrc: "/videos/the-beginning.mp4", tag: "Journey" },
+];
 
 export function HeroSection() {
   const { displayed, done } = useTypewriter("The Credential That Gets You Hired");
@@ -94,16 +79,15 @@ export function HeroSection() {
       <div className="absolute top-32 right-0 w-[400px] h-[400px] rounded-full bg-[#00E5FF]/4 blur-[120px] pointer-events-none" />
 
       {/* ─── Asymmetric Split: Left-Heavy Power ─── */}
-      <div className="relative z-10 flex-1 flex flex-col lg:flex-row items-start w-full pt-28 pb-8 lg:pb-0">
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center pt-28 pb-20 px-6">
 
-        {/* ── Left Column: Brand Pillar (55%) — strictly left-aligned ── */}
-        <div className="w-full lg:w-[55%] flex flex-col items-start justify-center pl-6 md:pl-12 lg:pl-16 xl:pl-24 pr-6 lg:pr-8">
+        {/* ── Left Column: Brand Pillar — strictly left-aligned ── */}
+        <div className="flex flex-col items-start justify-center space-y-6 w-full">
           {/* Big ThinkSphere brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease }}
-            className="mb-4"
           >
             <span className="font-gotham text-[clamp(2.5rem,7vw,4.5rem)] font-black uppercase tracking-tighter leading-none text-slate-900">
               Think<span className="text-[#2A7D6E] drop-shadow-[0_0_10px_rgba(42,125,110,0.3)]">Sphere</span>
@@ -115,7 +99,6 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease, delay: 0.1 }}
-            className="mb-6"
           >
             <span className="accent-font inline-block text-[11px] font-semibold uppercase tracking-[5px] text-slate-500">
               ALU E-Lab Think Tank
@@ -127,7 +110,6 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.3 }}
-            className="mb-5"
           >
             <h1 className="font-serif text-[clamp(2.2rem,5vw,3.5rem)] font-bold leading-[1.08] tracking-[-1.5px] text-black text-left">
               {displayed}
@@ -145,7 +127,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: done ? 1 : 0, y: done ? 0 : 16 }}
             transition={{ duration: 0.7, ease, delay: 0.15 }}
-            className="font-gotham text-base md:text-lg text-slate-800 max-w-[520px] mb-8 leading-relaxed text-left"
+            className="font-gotham text-base md:text-lg text-slate-800 max-w-[520px] leading-relaxed text-left"
           >
             <span className="text-black font-semibold">$647M</span> in tourism revenue.{" "}
             <span className="text-black font-semibold">386,000</span> jobs. Yet Kicukiro&apos;s
@@ -183,15 +165,26 @@ export function HeroSection() {
           </motion.div>
         </div>
 
-        {/* ── Right Column: Immersive Visual Anchor (45%) — far right ── */}
-        <div className="w-full lg:w-[45%] relative flex items-center justify-end mt-8 lg:mt-0 px-6 lg:px-0">
+        {/* ── Right Column: Video Card Shuffle ── */}
+        <div className="w-full relative flex items-center justify-center overflow-hidden">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: done ? 1 : 0, scale: done ? 1 : 0.95 }}
             transition={{ duration: 1, ease, delay: 0.5 }}
-            className="w-full lg:w-[calc(100%+2rem)] aspect-square max-w-[560px] lg:max-w-none rounded-3xl lg:rounded-l-3xl lg:rounded-r-none overflow-hidden liquid-glass-strong lg:mr-0"
+            className="relative w-full"
           >
-            <LazySpline />
+            <CardStack
+              items={heroVideos}
+              initialIndex={0}
+              autoAdvance
+              intervalMs={3500}
+              pauseOnHover
+              showDots
+              cardWidth={480}
+              cardHeight={320}
+              maxVisible={4}
+              loop
+            />
           </motion.div>
         </div>
       </div>

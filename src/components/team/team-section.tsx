@@ -9,31 +9,31 @@ const teamMembers = [
     name: "Ishema Nissi",
     role: "Team Lead & Researcher",
     email: "n.ishema@alustudent.com",
-    avatar: "https://placehold.co/160x160/f5f5f5/888?text=IN&font=raleway",
+    avatar: "/images/nissi-sm.jpeg",
   },
   {
     name: "Ntwali Axel Omega",
     role: "Web Designer & Developer",
     email: "n.omega@alustudent.com",
-    avatar: "https://placehold.co/160x160/f5f5f5/888?text=NA&font=raleway",
+    avatar: "/images/axel-sm.jpeg",
   },
   {
     name: "Ntore Ruyonza Nissy",
     role: "Animation & Visual Design",
     email: "n.ntoreruyo@alustudent.com",
-    avatar: "https://placehold.co/160x160/f5f5f5/888?text=NR&font=raleway",
+    avatar: "/images/ntore-sm.jpeg",
   },
   {
     name: "Nancy Chishala",
     role: "Content Strategy & Analysis",
     email: "n.chishala@alustudent.com",
-    avatar: "https://placehold.co/160x160/f5f5f5/888?text=NC&font=raleway",
+    avatar: "/images/nancy-sm.jpeg",
   },
   {
     name: "Nyachol Obech Okuch",
     role: "Business Strategy & Design",
     email: "n.maclual@alustudent.com",
-    avatar: "https://placehold.co/160x160/f5f5f5/888?text=NO&font=raleway",
+    avatar: "/images/nicole-sm.jpeg",
   },
 ];
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 
 const links = [
@@ -12,6 +12,9 @@ const links = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => { setMounted(true); }, []);
 
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-[520px]">
@@ -35,29 +38,36 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* Mobile hamburger */}
-        <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger className="sm:hidden flex flex-col gap-[5px] p-1 cursor-pointer" aria-label="Menu">
+        {/* Mobile hamburger — mounted client-only to avoid base-ui hydration mismatch */}
+        {mounted ? (
+          <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger className="sm:hidden flex flex-col gap-[5px] p-1 cursor-pointer" aria-label="Menu">
+              <span className="block w-4 h-[1.5px] bg-black rounded-full" />
+              <span className="block w-4 h-[1.5px] bg-black rounded-full" />
+            </SheetTrigger>
+            <SheetContent side="right" className="bg-white/90 backdrop-blur-2xl border-white/30">
+              <SheetTitle className="sr-only">Navigation</SheetTitle>
+              <div className="flex flex-col gap-6 mt-12">
+                {links.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    className="font-gotham text-lg font-semibold text-slate-500 hover:text-black transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </SheetContent>
+          </Sheet>
+        ) : (
+          <div className="sm:hidden flex flex-col gap-[5px] p-1" aria-label="Menu">
             <span className="block w-4 h-[1.5px] bg-black rounded-full" />
             <span className="block w-4 h-[1.5px] bg-black rounded-full" />
-          </SheetTrigger>
-          <SheetContent side="right" className="bg-white/90 backdrop-blur-2xl border-white/30">
-            <SheetTitle className="sr-only">Navigation</SheetTitle>
-            <div className="flex flex-col gap-6 mt-12">
-              {links.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className="font-gotham text-lg font-semibold text-slate-500 hover:text-black transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          </SheetContent>
-        </Sheet>
+          </div>
+        )}
       </div>
     </nav>
   );
