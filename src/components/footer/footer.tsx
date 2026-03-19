@@ -1,4 +1,4 @@
-import { Youtube, Mail } from "lucide-react";
+import { Youtube, Instagram, Mail } from "lucide-react";
 
 export function Footer() {
   return (
@@ -27,6 +27,15 @@ export function Footer() {
               aria-label="YouTube"
             >
               <Youtube className="w-4 h-4" strokeWidth={1.5} />
+            </a>
+            <a
+              href="https://www.instagram.com/th1nksphere/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-600 hover:text-[#2A7D6E] transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-4 h-4" strokeWidth={1.5} />
             </a>
             <a
               href="mailto:n.ishema@alustudent.com"

@@ -15,7 +15,7 @@ const teamMembers = [
     name: "Ntwali Axel Omega",
     role: "Web Designer & Developer",
     email: "n.omega@alustudent.com",
-    avatar: "/images/axel-sm.jpeg",
+    avatar: "/images/axel-v2.jpeg",
   },
   {
     name: "Ntore Ruyonza Nissy",
