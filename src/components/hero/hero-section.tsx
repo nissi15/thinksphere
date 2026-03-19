@@ -143,6 +143,15 @@ export function HeroSection() {
               Explore Our Journey
             </a>
             <a
+              href="/platform"
+              className={cn(
+                buttonVariants({ variant: "outline", size: "lg" }),
+                "font-gotham rounded-full px-8 py-3 h-auto text-sm font-semibold bg-black text-white hover:bg-black/80 border-black transition-all"
+              )}
+            >
+              Enter Platform →
+            </a>
+            <a
               href="https://www.youtube.com/@ALUTHINKSPHERE"
               target="_blank"
               rel="noopener noreferrer"
