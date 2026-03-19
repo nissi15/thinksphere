@@ -27,7 +27,21 @@
       "Bash(rm -rf \"C:\\\\Users\\\\nissi\\\\Downloads\\\\site/node_modules\")",
       "Bash(mkdir -p public/images)",
       "Bash(cp images/group-photo.jpeg public/images/)",
-      "Bash(npx shadcn@latest init --defaults --yes)"
+      "Bash(npx shadcn@latest init --defaults --yes)",
+      "Bash(npx shadcn@latest add card badge sheet --yes)",
+      "Bash(npx next:*)",
+      "Bash(python skills/ui-ux-pro-max/scripts/search.py \"think tank portfolio glassmorphism journey documentation videos images\" --design-system -p \"ThinkSphere\")",
+      "Bash(python skills/ui-ux-pro-max/scripts/search.py \"glassmorphism frosted glass translucent\" --domain style -n 3)",
+      "Bash(python skills/ui-ux-pro-max/scripts/search.py \"portfolio creative modern vibrant\" --domain color -n 3)",
+      "Bash(python -c \":*)",
+      "Bash(where npm:*)",
+      "Bash(where npx:*)",
+      "Bash(mv \"WhatsApp Video 2026-03-18 at 11.15.17 AM.mp4\" \"video-1.mp4\")",
+      "Bash(mv \"WhatsApp Video 2026-03-18 at 11.16.08 AM.mp4\" \"video-2.mp4\")",
+      "Bash(mv \"WhatsApp Video 2026-03-18 at 11.17.53 AM.mp4\" \"video-3.mp4\")",
+      "Bash(mv \"WhatsApp Video 2026-03-18 at 11.17.57 AM.mp4\" \"video-4.mp4\")",
+      "Bash(mv \"WhatsApp Video 2026-03-18 at 11.17.58 AM.mp4\" \"video-5.mp4\")",
+      "Bash(taskkill //F //IM node.exe)"
     ]
   }
 }
