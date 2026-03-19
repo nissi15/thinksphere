@@ -20,5 +20,6 @@ npm-debug.log*
 .DS_Store
 Thumbs.db
 
-# build artifacts
-videos/
+# large video files (MOV)
+*.MOV
+*.mov

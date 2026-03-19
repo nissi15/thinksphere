@@ -42,16 +42,14 @@ const stats = [
 
 
 const heroVideos: CardStackItem[] = [
-  { id: 1, title: "Community Children", description: "Youth of Kicukiro", videoSrc: "/videos/children.MOV", tag: "Community" },
+  { id: 1, title: "Community Children", description: "Youth of Kicukiro", imageSrc: "/images/group-photo.jpeg", tag: "Community" },
   { id: 2, title: "The School", description: "Kicukiro school building", imageSrc: "/images/school-building.jpeg", tag: "Education" },
-  { id: 3, title: "At the Gallery", description: "Envision Gallery visit", videoSrc: "/videos/at-gallery.MOV", tag: "Tourism" },
+  { id: 3, title: "At the Gallery", description: "Envision Gallery visit", imageSrc: "/images/team-group-rotated.jpeg", tag: "Tourism" },
   { id: 4, title: "Field Visit", description: "Team on the ground in Kicukiro", imageSrc: "/images/team-selfie.jpeg", tag: "Fieldwork" },
-  { id: 5, title: "CEO Interview", description: "Envision CEO on tourism impact", videoSrc: "/videos/ceo-envision.MOV", tag: "Business" },
-  { id: 6, title: "The Team", description: "ThinkSphere team at Envision Gallery", imageSrc: "/images/team-group.jpeg", tag: "Team" },
-  { id: 7, title: "Paying Fees", description: "Tuition for 10+ students", videoSrc: "/videos/paying-fees.mp4", tag: "Impact" },
-  { id: 8, title: "Community Voices", description: "Stories from Kicukiro", videoSrc: "/videos/3-people.mp4", tag: "Voices" },
-  { id: 9, title: "The Beginning", description: "Where it all started", videoSrc: "/videos/at-the-start.mp4", tag: "Origins" },
-  { id: 10, title: "Our Journey", description: "ThinkSphere origins", videoSrc: "/videos/the-beginning.mp4", tag: "Journey" },
+  { id: 5, title: "Paying Fees", description: "Tuition for 10+ students", videoSrc: "/videos/paying-fees.mp4", tag: "Impact" },
+  { id: 6, title: "Community Voices", description: "Stories from Kicukiro", videoSrc: "/videos/3-people.mp4", tag: "Voices" },
+  { id: 7, title: "The Beginning", description: "Where it all started", videoSrc: "/videos/at-the-start.mp4", tag: "Origins" },
+  { id: 8, title: "Our Journey", description: "ThinkSphere origins", videoSrc: "/videos/the-beginning.mp4", tag: "Journey" },
 ];
 
 export function HeroSection() {
