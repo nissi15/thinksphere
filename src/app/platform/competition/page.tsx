@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import {
   Trophy,
-  Calendar,
   Users,
   CheckCircle2,
   Clock,
@@ -41,11 +40,11 @@ const timeline = [
 function statusIcon(status: string) {
   switch (status) {
     case "submitted":
-      return <CheckCircle2 className="w-4 h-4 text-[#00E5FF]/70" />;
+      return <CheckCircle2 className="w-4 h-4 text-[#0891b2]/70" />;
     case "in-progress":
-      return <Clock className="w-4 h-4 text-yellow-400/70" />;
+      return <Clock className="w-4 h-4 text-amber-500/70" />;
     default:
-      return <AlertCircle className="w-4 h-4 text-white/20" />;
+      return <AlertCircle className="w-4 h-4 text-slate-300" />;
   }
 }
 
@@ -69,13 +68,13 @@ export default function CompetitionPage() {
     >
       {/* Header */}
       <div className="mb-8">
-        <p className="text-[11px] accent-font font-bold uppercase tracking-[3px] text-white/60 mb-2">
+        <p className="text-[11px] accent-font font-bold uppercase tracking-[3px] text-slate-400 mb-2">
           Pitch Day
         </p>
-        <h1 className="font-serif text-3xl font-bold text-white">
+        <h1 className="font-serif text-3xl font-bold text-slate-800">
           ThinkSphere &times; BDF Competition
         </h1>
-        <p className="font-gotham text-sm text-white/50 mt-2">
+        <p className="font-gotham text-sm text-slate-500 mt-2">
           Cycle 3 — Kicukiro District &middot; March 2026
         </p>
       </div>
@@ -85,13 +84,13 @@ export default function CompetitionPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease, delay: 0.1 }}
-        className="liquid-glass-grey-light rounded-2xl p-5 mb-6 flex items-center gap-3"
+        className="glass-light-card rounded-2xl p-5 mb-6 flex items-center gap-3"
       >
-        <div className="w-3 h-3 rounded-full bg-[#00E5FF] animate-pulse" />
-        <span className="font-gotham text-base font-semibold text-white">
+        <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
+        <span className="font-gotham text-base font-semibold text-slate-700">
           Pitching in Progress — Round 2 of 3
         </span>
-        <span className="ml-auto text-xs font-gotham text-white/40">
+        <span className="ml-auto text-xs font-gotham text-slate-400">
           Prize Pool: RWF 5,000,000
         </span>
       </motion.div>
@@ -102,12 +101,12 @@ export default function CompetitionPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease, delay: 0.2 }}
-          className="lg:col-span-2 liquid-glass-grey-light rounded-2xl p-6"
+          className="lg:col-span-2 glass-light-card rounded-2xl p-6"
         >
-          <h2 className="text-[11px] accent-font font-bold uppercase tracking-[3px] text-white/60 mb-4">
+          <h2 className="text-[11px] accent-font font-bold uppercase tracking-[3px] text-slate-400 mb-4">
             About the Competition
           </h2>
-          <p className="font-gotham text-sm text-white/70 leading-relaxed mb-4">
+          <p className="font-gotham text-sm text-slate-600 leading-relaxed mb-4">
             Teams of 3–5 ThinkSphere participants design and pitch a sustainable
             tourism business for Kicukiro District. Winners receive seed funding
             from BDF (Business Development Fund) to launch their ventures, plus
@@ -115,20 +114,20 @@ export default function CompetitionPage() {
             recruiter network.
           </p>
           <div className="grid grid-cols-3 gap-3">
-            <div className="text-center p-3 rounded-xl bg-white/[0.02]">
-              <Users className="w-5 h-5 text-[#00E5FF]/50 mx-auto mb-1" />
-              <span className="stat-font text-lg font-bold text-white block">6</span>
-              <span className="text-[10px] font-gotham text-white/40">Teams</span>
+            <div className="text-center p-3 rounded-xl bg-slate-50/60">
+              <Users className="w-5 h-5 text-[#0891b2]/50 mx-auto mb-1" />
+              <span className="stat-font text-lg font-bold text-slate-700 block">6</span>
+              <span className="text-[10px] font-gotham text-slate-400">Teams</span>
             </div>
-            <div className="text-center p-3 rounded-xl bg-white/[0.02]">
-              <Target className="w-5 h-5 text-[#00E5FF]/50 mx-auto mb-1" />
-              <span className="stat-font text-lg font-bold text-white block">23</span>
-              <span className="text-[10px] font-gotham text-white/40">Participants</span>
+            <div className="text-center p-3 rounded-xl bg-slate-50/60">
+              <Target className="w-5 h-5 text-[#0891b2]/50 mx-auto mb-1" />
+              <span className="stat-font text-lg font-bold text-slate-700 block">23</span>
+              <span className="text-[10px] font-gotham text-slate-400">Participants</span>
             </div>
-            <div className="text-center p-3 rounded-xl bg-white/[0.02]">
-              <Banknote className="w-5 h-5 text-[#00E5FF]/50 mx-auto mb-1" />
-              <span className="stat-font text-lg font-bold text-white block">5M</span>
-              <span className="text-[10px] font-gotham text-white/40">RWF Prize</span>
+            <div className="text-center p-3 rounded-xl bg-slate-50/60">
+              <Banknote className="w-5 h-5 text-[#0891b2]/50 mx-auto mb-1" />
+              <span className="stat-font text-lg font-bold text-slate-700 block">5M</span>
+              <span className="text-[10px] font-gotham text-slate-400">RWF Prize</span>
             </div>
           </div>
         </motion.div>
@@ -138,9 +137,9 @@ export default function CompetitionPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease, delay: 0.25 }}
-          className="liquid-glass-grey-light rounded-2xl p-6"
+          className="glass-light-card rounded-2xl p-6"
         >
-          <h2 className="text-[11px] accent-font font-bold uppercase tracking-[3px] text-white/60 mb-4">
+          <h2 className="text-[11px] accent-font font-bold uppercase tracking-[3px] text-slate-400 mb-4">
             Timeline
           </h2>
           <div className="space-y-4">
@@ -150,16 +149,16 @@ export default function CompetitionPage() {
                   <div
                     className={`w-3 h-3 rounded-full mt-0.5 ${
                       t.done
-                        ? "bg-[#00E5FF]"
+                        ? "bg-[#0891b2]"
                         : t.active
-                          ? "bg-[#00E5FF]/60 ring-4 ring-[#00E5FF]/15"
-                          : "bg-white/10"
+                          ? "bg-[#0891b2]/60 ring-4 ring-[#0891b2]/10"
+                          : "bg-slate-200"
                     }`}
                   />
                   {i < timeline.length - 1 && (
                     <div
                       className={`w-[2px] h-6 mt-1 ${
-                        t.done ? "bg-[#00E5FF]/30" : "bg-white/5"
+                        t.done ? "bg-[#0891b2]/30" : "bg-slate-200"
                       }`}
                     />
                   )}
@@ -167,12 +166,12 @@ export default function CompetitionPage() {
                 <div>
                   <p
                     className={`font-gotham text-xs font-semibold ${
-                      t.done || t.active ? "text-white/80" : "text-white/30"
+                      t.done || t.active ? "text-slate-600" : "text-slate-400"
                     }`}
                   >
                     {t.label}
                   </p>
-                  <span className="text-[10px] font-gotham text-white/35">{t.date}</span>
+                  <span className="text-[10px] font-gotham text-slate-400">{t.date}</span>
                 </div>
               </div>
             ))}
@@ -185,25 +184,25 @@ export default function CompetitionPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease, delay: 0.3 }}
-        className="liquid-glass-grey-light rounded-2xl p-6 mb-6"
+        className="glass-light-card rounded-2xl p-6 mb-6"
       >
-        <h2 className="text-[11px] accent-font font-bold uppercase tracking-[3px] text-white/60 mb-4">
+        <h2 className="text-[11px] accent-font font-bold uppercase tracking-[3px] text-slate-400 mb-4">
           Participating Teams
         </h2>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-white/10">
-                <th className="text-left text-[10px] accent-font font-bold uppercase tracking-[2px] text-white/40 pb-3 pr-4">
+              <tr className="border-b border-slate-200">
+                <th className="text-left text-[10px] accent-font font-bold uppercase tracking-[2px] text-slate-400 pb-3 pr-4">
                   Team
                 </th>
-                <th className="text-left text-[10px] accent-font font-bold uppercase tracking-[2px] text-white/40 pb-3 pr-4">
+                <th className="text-left text-[10px] accent-font font-bold uppercase tracking-[2px] text-slate-400 pb-3 pr-4">
                   Idea
                 </th>
-                <th className="text-center text-[10px] accent-font font-bold uppercase tracking-[2px] text-white/40 pb-3 pr-4">
+                <th className="text-center text-[10px] accent-font font-bold uppercase tracking-[2px] text-slate-400 pb-3 pr-4">
                   Members
                 </th>
-                <th className="text-right text-[10px] accent-font font-bold uppercase tracking-[2px] text-white/40 pb-3">
+                <th className="text-right text-[10px] accent-font font-bold uppercase tracking-[2px] text-slate-400 pb-3">
                   Status
                 </th>
               </tr>
@@ -212,23 +211,23 @@ export default function CompetitionPage() {
               {teams.map((team) => (
                 <tr
                   key={team.name}
-                  className="border-b border-white/5 hover:bg-white/[0.02] transition-colors"
+                  className="border-b border-slate-100 hover:bg-slate-50/60 transition-colors"
                 >
                   <td className="py-3 pr-4">
-                    <span className="font-gotham text-sm font-semibold text-white/85">
+                    <span className="font-gotham text-sm font-semibold text-slate-700">
                       {team.name}
                     </span>
                   </td>
                   <td className="py-3 pr-4">
-                    <span className="font-gotham text-xs text-white/50">{team.idea}</span>
+                    <span className="font-gotham text-xs text-slate-500">{team.idea}</span>
                   </td>
                   <td className="py-3 pr-4 text-center">
-                    <span className="stat-font text-sm text-white/60">{team.members}</span>
+                    <span className="stat-font text-sm text-slate-500">{team.members}</span>
                   </td>
                   <td className="py-3">
                     <div className="flex items-center justify-end gap-2">
                       {statusIcon(team.status)}
-                      <span className="font-gotham text-xs text-white/50">
+                      <span className="font-gotham text-xs text-slate-500">
                         {statusLabel(team.status)}
                       </span>
                     </div>
@@ -245,9 +244,9 @@ export default function CompetitionPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease, delay: 0.4 }}
-        className="liquid-glass-grey-light rounded-2xl p-6 mb-4"
+        className="glass-light-card rounded-2xl p-6 mb-4"
       >
-        <h2 className="text-[11px] accent-font font-bold uppercase tracking-[3px] text-white/60 mb-4">
+        <h2 className="text-[11px] accent-font font-bold uppercase tracking-[3px] text-slate-400 mb-4">
           Previous Winners — Cohort 2
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -256,29 +255,29 @@ export default function CompetitionPage() {
               key={w.place}
               className={`p-5 rounded-xl transition-all ${
                 w.place === "1st"
-                  ? "bg-[#00E5FF]/5 border border-[#00E5FF]/15"
-                  : "bg-white/[0.02]"
+                  ? "bg-[#0891b2]/5 border border-[#0891b2]/15"
+                  : "bg-slate-50/60"
               }`}
             >
               <div className="flex items-center gap-2 mb-3">
                 <div
                   className={`w-8 h-8 rounded-lg flex items-center justify-center ${
                     w.place === "1st"
-                      ? "bg-[#00E5FF] text-black"
-                      : "liquid-glass-grey-light text-white/50"
+                      ? "bg-[#0891b2] text-white"
+                      : "bg-slate-100 text-slate-500"
                   }`}
                 >
                   <Trophy className="w-4 h-4" />
                 </div>
-                <span className="text-[10px] accent-font font-bold uppercase tracking-wider text-[#00E5FF]/60">
+                <span className="text-[10px] accent-font font-bold uppercase tracking-wider text-[#0891b2]/60">
                   {w.place} Place
                 </span>
               </div>
-              <p className="font-gotham text-sm font-bold text-white/90 mb-1">
+              <p className="font-gotham text-sm font-bold text-slate-700 mb-1">
                 {w.team}
               </p>
-              <p className="text-xs text-white/50 mb-3">{w.idea}</p>
-              <span className="stat-font text-lg font-bold text-white/80">
+              <p className="text-xs text-slate-500 mb-3">{w.idea}</p>
+              <span className="stat-font text-lg font-bold text-slate-700">
                 {w.funding}
               </span>
             </div>
@@ -286,7 +285,7 @@ export default function CompetitionPage() {
         </div>
       </motion.div>
 
-      <p className="font-gotham text-xs text-white/40 italic">
+      <p className="font-gotham text-xs text-slate-400 italic">
         * ThinkSphere retains 10% equity in funded ventures for long-term
         sustainability and reinvestment into future cohorts.
       </p>

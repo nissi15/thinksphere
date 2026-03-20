@@ -36,22 +36,22 @@ export function TrendChart() {
   const placementPts = toPath(placements);
 
   return (
-    <div className="liquid-glass-grey-light rounded-2xl p-5">
+    <div className="glass-light-card rounded-2xl p-5">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          <TrendingUp className="w-4 h-4 text-[#00E5FF]/60" />
-          <span className="text-[11px] accent-font font-bold uppercase tracking-[2px] text-white/70">
+          <TrendingUp className="w-4 h-4 text-[#0891b2]/60" />
+          <span className="text-[11px] accent-font font-bold uppercase tracking-[2px] text-slate-500">
             Growth Trend
           </span>
         </div>
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-1.5">
-            <div className="w-3 h-[2px] rounded-full bg-[#00E5FF]" />
-            <span className="text-[10px] font-gotham text-white/60">Trained</span>
+            <div className="w-3 h-[2px] rounded-full bg-[#0891b2]" />
+            <span className="text-[10px] font-gotham text-slate-400">Trained</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <div className="w-3 h-[2px] rounded-full bg-[#00E5FF]/40" />
-            <span className="text-[10px] font-gotham text-white/60">Placed</span>
+            <div className="w-3 h-[2px] rounded-full bg-[#0891b2]/40" />
+            <span className="text-[10px] font-gotham text-slate-400">Placed</span>
           </div>
         </div>
       </div>
@@ -66,17 +66,17 @@ export function TrendChart() {
               y1={y}
               x2={w - padR}
               y2={y}
-              stroke="rgba(255,255,255,0.04)"
+              stroke="rgba(0,0,0,0.05)"
               strokeWidth="1"
             />
           );
         })}
-        <path d={areaD(trainedPts)} fill="rgba(0,229,255,0.08)" />
-        <path d={areaD(placementPts)} fill="rgba(0,229,255,0.04)" />
+        <path d={areaD(trainedPts)} fill="rgba(8,145,178,0.08)" />
+        <path d={areaD(placementPts)} fill="rgba(8,145,178,0.04)" />
         <path
           d={pathD(trainedPts)}
           fill="none"
-          stroke="#00E5FF"
+          stroke="#0891b2"
           strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -84,7 +84,7 @@ export function TrendChart() {
         <path
           d={pathD(placementPts)}
           fill="none"
-          stroke="rgba(0,229,255,0.4)"
+          stroke="rgba(8,145,178,0.4)"
           strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -93,13 +93,13 @@ export function TrendChart() {
           cx={trainedPts[trainedPts.length - 1].x}
           cy={trainedPts[trainedPts.length - 1].y}
           r="4"
-          fill="#00E5FF"
+          fill="#0891b2"
         />
         <circle
           cx={placementPts[placementPts.length - 1].x}
           cy={placementPts[placementPts.length - 1].y}
           r="4"
-          fill="rgba(0,229,255,0.5)"
+          fill="rgba(8,145,178,0.5)"
         />
         {months.map((m, i) => (
           <text
@@ -107,7 +107,7 @@ export function TrendChart() {
             x={padL + (i / (months.length - 1)) * (w - padL - padR)}
             y={h - 4}
             textAnchor="middle"
-            className="text-[11px] fill-white/40"
+            className="text-[11px] fill-slate-400"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             {m}
@@ -115,16 +115,16 @@ export function TrendChart() {
         ))}
       </svg>
 
-      <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
-        <span className="text-xs font-gotham font-semibold text-white/60">
+      <div className="flex items-center justify-between mt-4 pt-4 border-t border-slate-200/60">
+        <span className="text-xs font-gotham font-semibold text-slate-400">
           Revenue (Q1 → Q3)
         </span>
         <div className="flex items-center gap-2">
-          <span className="stat-font text-sm font-bold text-white/90">
+          <span className="stat-font text-sm font-bold text-slate-700">
             $0.8M → $4.2M
           </span>
-          <ArrowUpRight className="w-3.5 h-3.5 text-[#00E5FF]" />
-          <span className="text-xs font-gotham font-bold text-[#00E5FF]">+425%</span>
+          <ArrowUpRight className="w-3.5 h-3.5 text-[#0891b2]" />
+          <span className="text-xs font-gotham font-bold text-[#0891b2]">+425%</span>
         </div>
       </div>
     </div>

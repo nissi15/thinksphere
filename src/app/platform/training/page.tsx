@@ -122,11 +122,11 @@ const resources = [
 function statusIcon(status: string) {
   switch (status) {
     case "completed":
-      return <CheckCircle2 className="w-5 h-5 text-[#00E5FF]" />;
+      return <CheckCircle2 className="w-5 h-5 text-[#0891b2]" />;
     case "in-progress":
-      return <Play className="w-5 h-5 text-[#00E5FF]/70" />;
+      return <Play className="w-5 h-5 text-[#0891b2]/70" />;
     default:
-      return <Lock className="w-5 h-5 text-white/20" />;
+      return <Lock className="w-5 h-5 text-slate-300" />;
   }
 }
 
@@ -148,21 +148,21 @@ export default function TrainingPage() {
       {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <div>
-          <p className="text-[11px] accent-font font-bold uppercase tracking-[3px] text-white/60">
+          <p className="text-[11px] accent-font font-bold uppercase tracking-[3px] text-slate-400">
             Bootcamp Curriculum
           </p>
-          <h1 className="font-serif text-3xl font-bold text-white mt-1">
+          <h1 className="font-serif text-3xl font-bold text-slate-800 mt-1">
             Training Center
           </h1>
         </div>
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl liquid-glass-grey-light">
-            <Star className="w-4 h-4 text-[#00E5FF]" />
-            <span className="stat-font text-sm font-bold text-white/90">2,840 XP</span>
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl glass-light-card">
+            <Star className="w-4 h-4 text-[#0891b2]" />
+            <span className="stat-font text-sm font-bold text-slate-700">2,840 XP</span>
           </div>
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl liquid-glass-grey-light">
-            <Award className="w-4 h-4 text-[#00E5FF]/60" />
-            <span className="text-xs font-gotham font-semibold text-white/70">
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl glass-light-card">
+            <Award className="w-4 h-4 text-[#0891b2]/60" />
+            <span className="text-xs font-gotham font-semibold text-slate-500">
               Rank #1 in Cohort
             </span>
           </div>
@@ -176,9 +176,9 @@ export default function TrainingPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease, delay: 0.1 }}
-          className="liquid-glass-grey-light rounded-2xl p-6"
+          className="glass-light-card rounded-2xl p-6"
         >
-          <p className="text-[11px] accent-font font-bold uppercase tracking-[2px] text-white/60 mb-4">
+          <p className="text-[11px] accent-font font-bold uppercase tracking-[2px] text-slate-400 mb-4">
             Overall Progress
           </p>
           <div className="flex items-center justify-center mb-4">
@@ -189,7 +189,7 @@ export default function TrainingPage() {
                   cy="50"
                   r="42"
                   fill="none"
-                  stroke="rgba(255,255,255,0.05)"
+                  stroke="rgba(0,0,0,0.05)"
                   strokeWidth="8"
                 />
                 <circle
@@ -197,14 +197,14 @@ export default function TrainingPage() {
                   cy="50"
                   r="42"
                   fill="none"
-                  stroke="#00E5FF"
+                  stroke="#0891b2"
                   strokeWidth="8"
                   strokeLinecap="round"
                   strokeDasharray={`${overallProgress * 2.64} ${264 - overallProgress * 2.64}`}
                 />
               </svg>
               <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="stat-font text-2xl font-bold text-white">
+                <span className="stat-font text-2xl font-bold text-slate-800">
                   {overallProgress}%
                 </span>
               </div>
@@ -212,16 +212,16 @@ export default function TrainingPage() {
           </div>
           <div className="grid grid-cols-2 gap-3 text-center">
             <div>
-              <span className="stat-font text-lg font-bold text-white block">
+              <span className="stat-font text-lg font-bold text-slate-700 block">
                 {completedModules}/{modules.length}
               </span>
-              <span className="text-[10px] font-gotham text-white/40">Modules</span>
+              <span className="text-[10px] font-gotham text-slate-400">Modules</span>
             </div>
             <div>
-              <span className="stat-font text-lg font-bold text-white block">
+              <span className="stat-font text-lg font-bold text-slate-700 block">
                 {completedLessons}/{totalLessons}
               </span>
-              <span className="text-[10px] font-gotham text-white/40">Lessons</span>
+              <span className="text-[10px] font-gotham text-slate-400">Lessons</span>
             </div>
           </div>
         </motion.div>
@@ -231,38 +231,38 @@ export default function TrainingPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease, delay: 0.15 }}
-          className="lg:col-span-2 liquid-glass-grey-light rounded-2xl p-6 flex flex-col justify-between"
+          className="lg:col-span-2 glass-light-card rounded-2xl p-6 flex flex-col justify-between"
         >
           <div>
-            <p className="text-[11px] accent-font font-bold uppercase tracking-[2px] text-white/60 mb-2">
+            <p className="text-[11px] accent-font font-bold uppercase tracking-[2px] text-slate-400 mb-2">
               Continue Where You Left Off
             </p>
-            <p className="text-xs font-gotham text-white/40 mb-4">
+            <p className="text-xs font-gotham text-slate-400 mb-4">
               {currentLesson.module}
             </p>
-            <h3 className="font-gotham text-xl font-bold text-white mb-2">
+            <h3 className="font-gotham text-xl font-bold text-slate-800 mb-2">
               {currentLesson.title}
             </h3>
             <div className="flex items-center gap-4 mb-4">
               <div className="flex items-center gap-1.5">
-                <Video className="w-3.5 h-3.5 text-white/40" />
-                <span className="text-xs font-gotham text-white/50">
+                <Video className="w-3.5 h-3.5 text-slate-400" />
+                <span className="text-xs font-gotham text-slate-500">
                   {currentLesson.type}
                 </span>
               </div>
               <div className="flex items-center gap-1.5">
-                <Clock className="w-3.5 h-3.5 text-white/40" />
-                <span className="text-xs font-gotham text-white/50">
+                <Clock className="w-3.5 h-3.5 text-slate-400" />
+                <span className="text-xs font-gotham text-slate-500">
                   {currentLesson.duration}
                 </span>
               </div>
-              <span className="text-xs font-gotham text-white/50">
+              <span className="text-xs font-gotham text-slate-500">
                 Lesson {currentLesson.lesson} of {currentLesson.totalLessons}
               </span>
             </div>
-            <div className="h-1.5 rounded-full bg-white/5 overflow-hidden mb-2 max-w-md">
+            <div className="h-1.5 rounded-full bg-slate-100 overflow-hidden mb-2 max-w-md">
               <div
-                className="h-full rounded-full bg-[#00E5FF]/50"
+                className="h-full rounded-full bg-[#0891b2]/50"
                 style={{
                   width: `${(currentLesson.lesson / currentLesson.totalLessons) * 100}%`,
                 }}
@@ -270,7 +270,7 @@ export default function TrainingPage() {
             </div>
           </div>
           <div className="mt-4">
-            <button className="inline-flex items-center gap-2 font-gotham text-sm font-semibold px-6 py-3 rounded-xl bg-[#00E5FF] text-black hover:bg-[#00E5FF]/90 transition-colors">
+            <button className="inline-flex items-center gap-2 font-gotham text-sm font-semibold px-6 py-3 rounded-xl bg-[#0891b2] text-white hover:bg-[#0891b2]/90 transition-colors">
               <Play className="w-4 h-4" /> Resume Lesson
             </button>
           </div>
@@ -286,7 +286,7 @@ export default function TrainingPage() {
           transition={{ duration: 0.5, ease, delay: 0.2 }}
           className="lg:col-span-2"
         >
-          <p className="text-[11px] accent-font font-bold uppercase tracking-[3px] text-white/60 mb-4">
+          <p className="text-[11px] accent-font font-bold uppercase tracking-[3px] text-slate-400 mb-4">
             Curriculum Modules
           </p>
           <div className="space-y-3">
@@ -296,19 +296,19 @@ export default function TrainingPage() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.35, ease, delay: 0.25 + i * 0.04 }}
-                className={`liquid-glass-grey-light rounded-2xl p-5 flex items-center gap-4 transition-all duration-300 ${
+                className={`glass-light-card rounded-2xl p-5 flex items-center gap-4 transition-all duration-300 ${
                   mod.status === "locked"
                     ? "opacity-50"
-                    : "hover:bg-white/[0.06] cursor-pointer"
+                    : "hover:bg-white/80 cursor-pointer"
                 }`}
               >
                 <div
                   className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${
                     mod.status === "completed"
-                      ? "bg-[#00E5FF]/10"
+                      ? "bg-[#0891b2]/10"
                       : mod.status === "in-progress"
-                        ? "bg-[#00E5FF]/5"
-                        : "bg-white/[0.02]"
+                        ? "bg-[#0891b2]/5"
+                        : "bg-slate-50"
                   }`}
                 >
                   {statusIcon(mod.status)}
@@ -316,27 +316,27 @@ export default function TrainingPage() {
 
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="font-gotham text-sm font-bold text-white/90 truncate">
+                    <span className="font-gotham text-sm font-bold text-slate-700 truncate">
                       {mod.title}
                     </span>
                   </div>
                   <div className="flex items-center gap-3 mb-2">
-                    <span className="text-[10px] font-gotham text-white/40">
+                    <span className="text-[10px] font-gotham text-slate-400">
                       {mod.lessons} lessons
                     </span>
-                    <span className="text-[10px] font-gotham text-white/40">
+                    <span className="text-[10px] font-gotham text-slate-400">
                       {mod.duration}
                     </span>
                   </div>
                   {mod.status !== "locked" && (
                     <div className="flex items-center gap-2">
-                      <div className="flex-1 h-1 rounded-full bg-white/5 overflow-hidden max-w-[200px]">
+                      <div className="flex-1 h-1 rounded-full bg-slate-100 overflow-hidden max-w-[200px]">
                         <div
-                          className="h-full rounded-full bg-[#00E5FF]/50"
+                          className="h-full rounded-full bg-[#0891b2]/50"
                           style={{ width: `${mod.progress}%` }}
                         />
                       </div>
-                      <span className="stat-font text-[10px] text-white/40">
+                      <span className="stat-font text-[10px] text-slate-400">
                         {mod.progress}%
                       </span>
                     </div>
@@ -345,7 +345,7 @@ export default function TrainingPage() {
                     {mod.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="text-[9px] font-gotham font-semibold px-2 py-0.5 rounded-md liquid-glass-grey-light text-white/50"
+                        className="text-[9px] font-gotham font-semibold px-2 py-0.5 rounded-md bg-slate-100 text-slate-500"
                       >
                         {skill}
                       </span>
@@ -354,7 +354,7 @@ export default function TrainingPage() {
                 </div>
 
                 {mod.status !== "locked" && (
-                  <ArrowRight className="w-4 h-4 text-white/20 shrink-0" />
+                  <ArrowRight className="w-4 h-4 text-slate-300 shrink-0" />
                 )}
               </motion.div>
             ))}
@@ -368,11 +368,11 @@ export default function TrainingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease, delay: 0.3 }}
-            className="liquid-glass-grey-light rounded-2xl p-5"
+            className="glass-light-card rounded-2xl p-5"
           >
             <div className="flex items-center gap-2 mb-4">
-              <BarChart3 className="w-4 h-4 text-[#00E5FF]/60" />
-              <span className="text-[11px] accent-font font-bold uppercase tracking-[2px] text-white/60">
+              <BarChart3 className="w-4 h-4 text-[#0891b2]/60" />
+              <span className="text-[11px] accent-font font-bold uppercase tracking-[2px] text-slate-400">
                 Cohort Leaderboard
               </span>
             </div>
@@ -381,26 +381,26 @@ export default function TrainingPage() {
                 <div
                   key={p.name}
                   className={`flex items-center gap-3 p-2.5 rounded-xl transition-colors ${
-                    p.rank === 1 ? "bg-[#00E5FF]/5" : "hover:bg-white/[0.02]"
+                    p.rank === 1 ? "bg-[#0891b2]/5" : "hover:bg-slate-50"
                   }`}
                 >
                   <span
                     className={`stat-font text-sm font-bold w-6 text-center ${
                       p.rank === 1
-                        ? "text-[#00E5FF]"
+                        ? "text-[#0891b2]"
                         : p.rank <= 3
-                          ? "text-white/60"
-                          : "text-white/30"
+                          ? "text-slate-500"
+                          : "text-slate-300"
                     }`}
                   >
                     {p.rank}
                   </span>
                   <div className="flex-1 min-w-0">
-                    <span className="font-gotham text-xs font-semibold text-white/80 truncate block">
+                    <span className="font-gotham text-xs font-semibold text-slate-600 truncate block">
                       {p.name}
                     </span>
                   </div>
-                  <span className="stat-font text-xs text-white/50">{p.xp} XP</span>
+                  <span className="stat-font text-xs text-slate-400">{p.xp} XP</span>
                 </div>
               ))}
             </div>
@@ -411,11 +411,11 @@ export default function TrainingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease, delay: 0.35 }}
-            className="liquid-glass-grey-light rounded-2xl p-5"
+            className="glass-light-card rounded-2xl p-5"
           >
             <div className="flex items-center gap-2 mb-4">
-              <BookOpen className="w-4 h-4 text-[#00E5FF]/60" />
-              <span className="text-[11px] accent-font font-bold uppercase tracking-[2px] text-white/60">
+              <BookOpen className="w-4 h-4 text-[#0891b2]/60" />
+              <span className="text-[11px] accent-font font-bold uppercase tracking-[2px] text-slate-400">
                 Resources
               </span>
             </div>
@@ -425,15 +425,15 @@ export default function TrainingPage() {
                 return (
                   <div
                     key={r.title}
-                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-white/[0.03] transition-colors cursor-pointer"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors cursor-pointer"
                   >
-                    <Icon className="w-4 h-4 text-white/30 shrink-0" />
+                    <Icon className="w-4 h-4 text-slate-400 shrink-0" />
                     <div className="flex-1 min-w-0">
-                      <span className="font-gotham text-xs text-white/70 truncate block">
+                      <span className="font-gotham text-xs text-slate-600 truncate block">
                         {r.title}
                       </span>
                     </div>
-                    <span className="text-[9px] font-gotham font-bold text-white/30 uppercase">
+                    <span className="text-[9px] font-gotham font-bold text-slate-400 uppercase">
                       {r.type}
                     </span>
                   </div>
@@ -447,24 +447,24 @@ export default function TrainingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease, delay: 0.4 }}
-            className="liquid-glass-grey-light rounded-2xl p-5"
+            className="glass-light-card rounded-2xl p-5"
           >
             <div className="flex items-center gap-2 mb-3">
-              <MessageSquare className="w-4 h-4 text-[#00E5FF]/60" />
-              <span className="text-[11px] accent-font font-bold uppercase tracking-[2px] text-white/60">
+              <MessageSquare className="w-4 h-4 text-[#0891b2]/60" />
+              <span className="text-[11px] accent-font font-bold uppercase tracking-[2px] text-slate-400">
                 Discussion
               </span>
             </div>
-            <p className="font-gotham text-xs text-white/50 mb-3">
+            <p className="font-gotham text-xs text-slate-500 mb-3">
               Connect with fellow participants and trainers.
             </p>
             <div className="flex items-center gap-2">
-              <Users className="w-4 h-4 text-white/30" />
-              <span className="text-xs font-gotham text-white/40">
+              <Users className="w-4 h-4 text-slate-400" />
+              <span className="text-xs font-gotham text-slate-400">
                 45 active in Cohort 4
               </span>
             </div>
-            <button className="mt-3 inline-flex items-center gap-1.5 font-gotham text-xs font-semibold text-[#00E5FF]/70 hover:text-[#00E5FF] transition-colors">
+            <button className="mt-3 inline-flex items-center gap-1.5 font-gotham text-xs font-semibold text-[#0891b2]/70 hover:text-[#0891b2] transition-colors">
               Open Forum <ArrowRight className="w-3 h-3" />
             </button>
           </motion.div>

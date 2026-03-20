@@ -63,21 +63,21 @@ export default function CredentialPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease, delay: 0.1 }}
-        className="liquid-glass-grey-light rounded-2xl p-6 mb-6"
+        className="glass-light-card rounded-2xl p-6 mb-6"
       >
         <div className="flex items-start gap-5">
-          <div className="w-20 h-20 rounded-2xl liquid-glass-grey-light flex items-center justify-center shrink-0">
-            <User className="w-10 h-10 text-white/50" />
+          <div className="w-20 h-20 rounded-2xl bg-slate-100 flex items-center justify-center shrink-0">
+            <User className="w-10 h-10 text-slate-400" />
           </div>
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-1">
-              <h1 className="font-serif text-2xl font-bold text-white">Marie Uwase</h1>
-              <BadgeCheck className="w-6 h-6 text-[#00E5FF]" />
+              <h1 className="font-serif text-2xl font-bold text-slate-800">Marie Uwase</h1>
+              <BadgeCheck className="w-6 h-6 text-[#0891b2]" />
             </div>
-            <p className="font-gotham text-sm text-white/60">
+            <p className="font-gotham text-sm text-slate-500">
               Tourism & Hospitality &middot; Kicukiro, Rwanda
             </p>
-            <div className="inline-flex items-center gap-2 mt-3 px-4 py-1.5 rounded-full bg-[#00E5FF] text-black">
+            <div className="inline-flex items-center gap-2 mt-3 px-4 py-1.5 rounded-full bg-[#0891b2] text-white">
               <Award className="w-4 h-4" />
               <span className="text-sm font-bold accent-font tracking-wider">
                 THINKSPHERE VERIFIED — COHORT 3
@@ -92,12 +92,12 @@ export default function CredentialPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease, delay: 0.2 }}
-        className="liquid-glass-grey-light rounded-2xl p-6 mb-6"
+        className="glass-light-card rounded-2xl p-6 mb-6"
       >
-        <h2 className="text-[11px] accent-font font-bold uppercase tracking-[3px] text-white/60 mb-3">
+        <h2 className="text-[11px] accent-font font-bold uppercase tracking-[3px] text-slate-400 mb-3">
           About
         </h2>
-        <p className="font-gotham text-sm text-white/70 leading-relaxed">
+        <p className="font-gotham text-sm text-slate-600 leading-relaxed">
           Passionate about sustainable tourism and community-driven hospitality
           experiences. ThinkSphere Cohort 3 graduate with expertise in guest
           services, digital marketing, and eco-tourism planning. Currently
@@ -112,19 +112,19 @@ export default function CredentialPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease, delay: 0.3 }}
-        className="liquid-glass-grey-light rounded-2xl p-6 mb-6"
+        className="glass-light-card rounded-2xl p-6 mb-6"
       >
-        <h2 className="text-[11px] accent-font font-bold uppercase tracking-[3px] text-white/60 mb-4">
+        <h2 className="text-[11px] accent-font font-bold uppercase tracking-[3px] text-slate-400 mb-4">
           Verified Skills
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {skills.map((skill) => (
             <div
               key={skill}
-              className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.04] transition-colors"
+              className="flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-50/60 hover:bg-slate-100/60 transition-colors"
             >
-              <CheckCircle2 className="w-5 h-5 text-[#00E5FF]/70 shrink-0" />
-              <span className="font-gotham text-sm font-semibold text-white/85">
+              <CheckCircle2 className="w-5 h-5 text-[#0891b2]/70 shrink-0" />
+              <span className="font-gotham text-sm font-semibold text-slate-600">
                 {skill}
               </span>
             </div>
@@ -137,9 +137,9 @@ export default function CredentialPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease, delay: 0.4 }}
-        className="liquid-glass-grey-light rounded-2xl p-6 mb-6"
+        className="glass-light-card rounded-2xl p-6 mb-6"
       >
-        <h2 className="text-[11px] accent-font font-bold uppercase tracking-[3px] text-white/60 mb-4">
+        <h2 className="text-[11px] accent-font font-bold uppercase tracking-[3px] text-slate-400 mb-4">
           Experience
         </h2>
         <div className="space-y-3">
@@ -150,31 +150,31 @@ export default function CredentialPage() {
                 key={exp.title}
                 className={`flex items-start gap-4 p-4 rounded-xl transition-colors ${
                   exp.highlight
-                    ? "bg-[#00E5FF]/5 border border-[#00E5FF]/10"
-                    : "bg-white/[0.02]"
+                    ? "bg-[#0891b2]/5 border border-[#0891b2]/10"
+                    : "bg-slate-50/60"
                 }`}
               >
                 <div
                   className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${
                     exp.highlight
-                      ? "bg-[#00E5FF]/10"
-                      : "liquid-glass-grey-light"
+                      ? "bg-[#0891b2]/10"
+                      : "bg-slate-100"
                   }`}
                 >
                   <Icon
                     className={`w-5 h-5 ${
-                      exp.highlight ? "text-[#00E5FF]/70" : "text-white/50"
+                      exp.highlight ? "text-[#0891b2]/70" : "text-slate-400"
                     }`}
                   />
                 </div>
                 <div className="flex-1">
-                  <p className="font-gotham text-sm font-bold text-white/90">
+                  <p className="font-gotham text-sm font-bold text-slate-700">
                     {exp.title}
                   </p>
-                  <p className="text-xs text-white/50 mt-0.5">{exp.subtitle}</p>
+                  <p className="text-xs text-slate-500 mt-0.5">{exp.subtitle}</p>
                   <div className="flex items-center gap-1.5 mt-2">
-                    <Calendar className="w-3 h-3 text-white/30" />
-                    <span className="text-[10px] font-gotham text-white/40">
+                    <Calendar className="w-3 h-3 text-slate-300" />
+                    <span className="text-[10px] font-gotham text-slate-400">
                       {exp.date}
                     </span>
                   </div>
@@ -192,13 +192,13 @@ export default function CredentialPage() {
         transition={{ duration: 0.5, ease, delay: 0.5 }}
         className="flex flex-wrap gap-3"
       >
-        <button className="inline-flex items-center gap-2 font-gotham text-sm font-semibold px-6 py-3 rounded-xl bg-white text-black hover:bg-white/90 transition-colors">
+        <button className="inline-flex items-center gap-2 font-gotham text-sm font-semibold px-6 py-3 rounded-xl bg-[#0891b2] text-white hover:bg-[#0891b2]/90 transition-colors">
           <Share2 className="w-4 h-4" /> Share Profile
         </button>
-        <button className="inline-flex items-center gap-2 font-gotham text-sm font-semibold px-6 py-3 rounded-xl liquid-glass-grey-light text-white/80 hover:bg-white/10 transition-colors">
+        <button className="inline-flex items-center gap-2 font-gotham text-sm font-semibold px-6 py-3 rounded-xl glass-light-card text-slate-600 hover:bg-slate-100 transition-colors">
           <Download className="w-4 h-4" /> Download CV
         </button>
-        <button className="inline-flex items-center gap-2 font-gotham text-sm font-semibold px-6 py-3 rounded-xl liquid-glass-grey-light text-white/80 hover:bg-white/10 transition-colors">
+        <button className="inline-flex items-center gap-2 font-gotham text-sm font-semibold px-6 py-3 rounded-xl glass-light-card text-slate-600 hover:bg-slate-100 transition-colors">
           <ExternalLink className="w-4 h-4" /> Public Link
         </button>
       </motion.div>
